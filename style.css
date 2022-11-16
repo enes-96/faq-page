@@ -5,13 +5,12 @@
 }
 body {
   font-family: "Raleway", sans-serif;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  font-weight: 200;
   flex-direction: column;
+  min-height: 100vh;
 }
 .container {
   display: flex;
@@ -20,14 +19,19 @@ body {
 }
 .card {
   height: 80px;
-  width: 800px;
-  display: flex;
-  justify-content: space-between;
+  max-width: 840px;
   padding: 24px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   border-radius: 11px;
-  transition: 0.3s all;
+  transition: 0.3s all ease;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .title {
   font-size: 62px;
@@ -36,7 +40,56 @@ body {
 .icon {
   height: 30px;
   cursor: pointer;
+  transition: 0.3s all;
 }
-.taller {
+.icon {
+  height: 26px;
+  width: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.icon-plus {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+}
+.icon-minus {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+  rotate: 90deg;
+  position: absolute;
+}
+
+.rotate {
+  rotate: 180deg;
+}
+
+.answer {
+  opacity: 1;
+  transition: 0.6s all ease-in-out;
+  padding: 28px 0;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  /**/
+}
+.hide {
+  opacity: 0;
+}
+
+.taller:first-child {
+  height: 234px;
+}
+.taller:nth-child(2) {
+  height: 335px;
+}
+.taller:nth-child(3) {
   height: 200px;
+}
+.taller:last-child {
+  height: 234px;
 }

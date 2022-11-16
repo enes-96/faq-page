@@ -1,10 +1,18 @@
 "use strict";
-const card1 = document.querySelector(".card-1");
-const card2 = document.querySelector(".card-2");
-const card3 = document.querySelector(".card-3");
-const card4 = document.querySelector(".card-4");
-const expandBtn = document.querySelector(".icon");
+//select all the question cards
+const questions = document.querySelectorAll(".card");
 
-expandBtn.addEventListener("click", () => {
-  card1.classList.toggle("taller");
+//select each of the cards
+questions.forEach(function (question) {
+  //select the button, answer, and icon of each card
+  const btn = question.querySelector(".icon");
+  const answer = question.querySelector(".answer");
+  const minusIcon = question.querySelector(".icon-minus");
+  // click event on each button
+  btn.addEventListener("click", function () {
+    question.classList.toggle("taller");
+    btn.classList.toggle("rotate");
+    minusIcon.classList.toggle("hide");
+    answer.classList.toggle("hide");
+  });
 });
